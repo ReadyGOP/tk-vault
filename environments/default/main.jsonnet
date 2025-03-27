@@ -22,7 +22,7 @@ local here = import 'main.jsonnet';
   }, type="kubernetes.io/dockerconfigjson") + {
     metadata+: {
       annotations: {
-        "avp.kubernetes.io/path": "secret/data/my-nginx"
+        "avp.kubernetes.io/path": "secret/data/repo"
       }
     }
   }, 

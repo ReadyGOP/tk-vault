@@ -5,7 +5,7 @@ local here = import 'values.jsonnet';
     ns: 'test',
 
     dockerHubSecretName: 'secrets-dockerhub-readygop-private',
-    dockerHubSecret: 'eyJhdXRocyI6eyJkb2NrZXIuaW8vcmVhZHlnb3AiOnsidXNlcm5hbWUiOiJqb3NlcGVjY2kiLCJwYXNzd29yZCI6ImRrckZFV0VSV2RlZTIzNGRld3IzMjNlZCIsImF1dGgiOiJhbTl6WlhCbFkyTnBPbVJyY2taRlYwVlNWMlJsWlRJek5HUmxkM0l6TWpObFpBPT0iLCJlbWFpbCI6IiJ9fX0=',
+    dockerHubSecret: '<docker>',
 
 
 
