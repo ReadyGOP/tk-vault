@@ -18,7 +18,7 @@ local here = import 'main.jsonnet';
 
   // Docker Registry Secret.
   dockerHubSecret: k.core.v1.secret.new(values.dockerHubSecretName, { 
-      ".dockerconfigjson":(values.dockerHubSecret)
+      ".dockerconfigjson": std.base64(values.dockerHubSecret)
   }, type="kubernetes.io/dockerconfigjson") + {
     metadata+: {
       annotations: {
