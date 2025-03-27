@@ -1,0 +1,1 @@
+import 'github.com/OneHQ/tanka-lib-k8-onehq/main.libsonnet'
