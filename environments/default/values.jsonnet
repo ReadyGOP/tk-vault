@@ -5,7 +5,7 @@ local here = import 'values.jsonnet';
     ns: 'test',
 
     dockerHubSecretName: 'secrets-dockerhub-readygop-private',
-    dockerHubSecret: '<docker>',
+    dockerHubSecret: "<path:secret/repo#docker | base64encode>",
 
 
 
