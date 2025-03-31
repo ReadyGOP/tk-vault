@@ -12,7 +12,7 @@ local here = import 'main.jsonnet';
   // Redis ConfigMap for url.
   redisCM_URL: k.core.v1.configMap.new(values.redis.spec.cont.redis.env.cmName, values.redis.spec.cont.redis.env.cmURL),
   // Redis StatefulSet.
-  redisSS: k.apps.v1.statefulSet.new(values.redis.labels.app) + kone.createSS(values.redis.spec, values.redis.labels.app),
+  redisSS: k.apps.v1.deployment.new(values.redis.labels.app) + kone.createDeploy(values.redis.spec, values.redis.labels.app),
   // Redis Service.
   redisService: k.core.v1.service.new(values.redis.serviceName, values.redis.labels, values.redis.svc_ports),
 
@@ -26,5 +26,15 @@ local here = import 'main.jsonnet';
       }
     }
   }, 
+
+  token: k.core.v1.secret.new(values.dockerHubSecretName, { 
+      "TOKEN": values.dockerHubSecret
+  }, type="Opaque") + {
+    metadata+: {
+      annotations: {
+        "avp.kubernetes.io/path": "secret/data/repo"
+      }
+    }
+  },
   
 }
