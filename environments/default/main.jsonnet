@@ -17,7 +17,7 @@ local here = import 'main.jsonnet';
   redisService: k.core.v1.service.new(values.redis.serviceName, values.redis.labels, values.redis.svc_ports),
 
   // Docker Registry Secret.
-  dockerHubSecret: k.core.v1.secret.new(values.dockerHubSecretName, { 
+  dockerHubSecret:: k.core.v1.secret.new(values.dockerHubSecretName, { 
       ".dockerconfigjson": values.dockerHubSecret
   }, type="kubernetes.io/dockerconfigjson") + {
     metadata+: {
