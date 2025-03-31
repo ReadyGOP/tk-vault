@@ -62,7 +62,7 @@ local here = import 'values.jsonnet';
             volumeClaimTemplates: [{
                 name: 'redis-data',
                 accessModes: ['ReadWriteOnce'],
-                storageClassName: 'basic',
+                storageClassName: 'crc-csi-hostpath-provisioner',
                 storage: '1Gi',
             }],
         },
