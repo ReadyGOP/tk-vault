@@ -44,7 +44,7 @@ local here = import 'values.jsonnet';
                         REDIS_URL: 'redis://redis-svc-' + here.ns + '.svc.cluster.local:6379',
                     },
                     secretRefs: [
-                        [here.dockerHubSecretName, self.secretDocker],
+                        [self.secretDockerName, self.secretDocker],
                     ],
 
                     secretDockerName: 'secrets-token-docker',
