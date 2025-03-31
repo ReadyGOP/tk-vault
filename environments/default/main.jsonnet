@@ -27,7 +27,7 @@ local here = import 'main.jsonnet';
     }
   }, 
 
-  token: k.core.v1.secret.new(values.dockerHubSecretName, { 
+  token: k.core.v1.secret.new(values.redis.spec.cont.redis.env.secretDockerName, { 
       "TOKEN": values.dockerHubSecret
   }, type="Opaque") + {
     metadata+: {

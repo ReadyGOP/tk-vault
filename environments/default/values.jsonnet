@@ -47,6 +47,7 @@ local here = import 'values.jsonnet';
                         [here.dockerHubSecretName, self.secretDocker],
                     ],
 
+                    secretDockerName: 'secrets-token-docker',
                     secretDocker: {
                         TOKEN: here.dockerHubSecret
                     },
